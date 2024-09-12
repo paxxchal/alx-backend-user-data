@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
+        "gensalt",
+        "hashpw",
+        "Holberton",
         "sessionmaker",
         "sqlalchemy"
     ]
