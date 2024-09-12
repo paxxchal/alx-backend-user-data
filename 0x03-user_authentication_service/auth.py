@@ -10,6 +10,7 @@ from sqlalchemy.orm.exc import NoResultFound
 import bcrypt
 from typing import Optional
 
+
 def _hash_password(password: str) -> bytes:
     """Hashes a password using bcrypt with a salt.
 
@@ -23,6 +24,7 @@ def _hash_password(password: str) -> bytes:
     salt = bcrypt.gensalt()
     hashed_password = bcrypt.hashpw(password_bytes, salt)
     return hashed_password
+
 
 class Auth:
     """Auth class to interact with the authentication database.
@@ -52,7 +54,10 @@ class Auth:
         except NoResultFound:
             # User does not exist, proceed with registration
             hashed_password = _hash_password(password)
-            user = self._db.add_user(email=email, hashed_password=hashed_password)
+            user = self._db.add_user(
+                email=email,
+                hashed_password=hashed_password
+                )
             return user
         except InvalidRequestError as e:
             raise ValueError(f"Invalid query arguments passed: {e}")
