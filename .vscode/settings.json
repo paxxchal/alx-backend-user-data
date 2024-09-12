@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
+        "Bienvenue",
         "gensalt",
         "hashpw",
         "Holberton",
+        "jsonify",
         "sessionmaker",
         "sqlalchemy"
     ]
